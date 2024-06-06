@@ -17,15 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 textElement.textContent = "画面を横向きにしてください";
             } else if (window.orientation === 90) {
                 textElement.textContent = "画面を縦向きにしてください";
-                imgElement.classList.add('a');
-                setTimeout(function () {
-                    imgElement.classList.remove('a');
-                }, 1000);
-            } else if (window.orientation === -90) {
-                textElement.textContent = "画面を縦向きにしてください";
                 imgElement.classList.add('b');
                 setTimeout(function () {
                     imgElement.classList.remove('b');
+                }, 1000);
+            } else if (window.orientation === -90) {
+                textElement.textContent = "画面を縦向きにしてください";
+                imgElement.classList.add('a');
+                setTimeout(function () {
+                    imgElement.classList.remove('a');
                 }, 1000);
             }
         }
