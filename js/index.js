@@ -1,39 +1,43 @@
-$(document).ready(function() {
-    function mobile(){
-        try{
-        document.createEvent("TouchEvent");
-        return true;
-        } catch(e) {
-        return false;
+document.addEventListener('DOMContentLoaded', function () {
+    function mobile() {
+        try {
+            document.createEvent("TouchEvent");
+            return true;
+        } catch (e) {
+            return false;
         }
-        }
+    }
+
     if (mobile()) {
         function checkOrientation() {
+            const textElement = document.querySelector('.text');
+            const imgElement = document.querySelector('.img');
+
             if (window.orientation === 0 || window.orientation === 180) {
-    
+                textElement.textContent = "画面を横向きにしてください";
             } else if (window.orientation === 90) {
-                $(".img").addClass("a");
-                setTimeout(function() {
-                    $(".img").removeClass("a");
+                textElement.textContent = "画面を縦向きにしてください";
+                imgElement.classList.add('a');
+                setTimeout(function () {
+                    imgElement.classList.remove('a');
                 }, 1000);
             } else if (window.orientation === -90) {
-                $(".img").addClass("b");
-                setTimeout(function() {
-                    $(".img").removeClass("b");
+                textElement.textContent = "画面を縦向きにしてください";
+                imgElement.classList.add('b');
+                setTimeout(function () {
+                    imgElement.classList.remove('b');
                 }, 1000);
             }
         }
-    
+
         // 初始檢查
         checkOrientation();
-    
+
         // 偵測方向改變
-        $(window).on("orientationchange", function() {
+        window.addEventListener('orientationchange', function () {
             checkOrientation();
         });
-    }else{
-        $("body").html("スマホをご利用ください");
+    } else {
+        document.body.innerHTML = "スマホをご利用ください";
     }
-    
 });
-
