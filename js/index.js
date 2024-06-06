@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
     function mobile() {
         try {
             document.createEvent("TouchEvent");
@@ -49,4 +49,4 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         document.body.innerHTML = "スマホをご利用ください";
     }
-});
+};
