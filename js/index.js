@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
     }
+    let landscapeCount = 0;
+
+    function updateLandscapeCount() {
+        landscapeCount++;
+        document.getElementById('landscapeCount').textContent = landscapeCount;
+    }
 
     if (mobile()) {
         function checkOrientation() {
@@ -15,14 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (window.orientation === 0 || window.orientation === 180) {
                 textElement.textContent = "画面を横向きにしてください";
+               
             } else if (window.orientation === 90) {
                 textElement.textContent = "画面を縦向きにしてください";
                 imgElement.classList.add('b');
                 setTimeout(function () {
                     imgElement.classList.remove('b');
                 }, 1000);
+                updateLandscapeCount()
             } else if (window.orientation === -90) {
                 textElement.textContent = "画面を縦向きにしてください";
+                updateLandscapeCount()
                 imgElement.classList.add('a');
                 setTimeout(function () {
                     imgElement.classList.remove('a');
