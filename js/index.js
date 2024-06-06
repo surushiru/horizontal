@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(function () {
                     imgElement.classList.remove('b');
                 }, 1000);
-                updateLandscapeCount()
+                 updateLandscapeCount()
             } else if (window.orientation === -90) {
                 textElement.textContent = "画面を縦向きにしてください";
                 updateLandscapeCount()
