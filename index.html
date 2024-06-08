@@ -23,21 +23,39 @@
         }
 
         .img.b {
-            background-image: url(img/2.jpg);
-        }
-
+background-image: url(img/2.jpg);            
+                    }
+                    .img.c {
+            background-image: url(img/4.jpg);
+                    }
         .landscape-count,.text {
             font-family: "DotGothic16", sans-serif;
             font-weight: 400;
             font-style: normal;
            
         }
-
+.img.click{
+  animation-name:  lookahead;  
+  animation-duration: 3s;
+}
+@keyframes lookahead{
+    0%{
+      background-image: url(img/a1.jpg);
+  }
+  10%{
+      background-image: url(img/a2.jpg);
+  }
+  90%{background-image: url(img/a1.jpg);}
+  100%{
+      background-image: url(img/1.jpg);
+  }
+}
         .landscape-count span {
             color: rgb(54, 134, 54);
             margin: 0 8px;
             font-size: 20px;
         }
+
     </style>
 </head>
 

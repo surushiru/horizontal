@@ -23,7 +23,22 @@ window.onload = function () {
 
             if (window.orientation === 0 || window.orientation === 180) {
                 textElement.textContent = "画面を横向きにしてください";
-               
+                imgElement.classList.add('c');
+                setTimeout(function () {
+                    imgElement.classList.remove('c');
+                }, 1000);
+$(".img").click(function(){
+    imgElement.classList.add('click');
+    setTimeout(function () {
+        imgElement.classList.remove('click');
+    }, 3000);
+
+})
+
+
+
+
+
             } else if (window.orientation === 90) {
                 textElement.textContent = "画面を縦向きにしてください";
                 imgElement.classList.add('b');
@@ -48,4 +63,5 @@ window.onload = function () {
         window.addEventListener('orientationchange', function () {
             checkOrientation();
         });
+
 };
