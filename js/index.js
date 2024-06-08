@@ -14,8 +14,10 @@ window.onload = function () {
         document.getElementById('landscapeCount').textContent = landscapeCount;
     }
 
-    if (mobile()) {
-        function checkOrientation() {
+    if (!mobile()) {
+          document.body.innerHTML = "スマホをご利用ください";
+    } 
+    function checkOrientation() {
             const textElement = document.querySelector('.text');
             const imgElement = document.querySelector('.img');
 
@@ -46,7 +48,4 @@ window.onload = function () {
         window.addEventListener('orientationchange', function () {
             checkOrientation();
         });
-    } else {
-        document.body.innerHTML = "スマホをご利用ください";
-    }
 };
